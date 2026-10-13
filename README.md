@@ -28,9 +28,17 @@ The simulation evaluates the system over a 25-second trajectory driven by minimu
 *   **State Convergence:** The observer successfully drives the estimation error to near-zero, validating the calculated $K_o$ gains.
 *   **Final Positioning Error:** $0.00183$ meters.
 *   **Final Estimation Error Norm:** $8.6257 \times 10^{-10}$.
+
+*State Evolution*
 <img width="1902" height="968" alt="Fig1" src="https://github.com/user-attachments/assets/a758e92d-f00e-4368-a478-adcb323faa58" />
+
+*State Estimation Error*
 <img width="1902" height="968" alt="Fig2" src="https://github.com/user-attachments/assets/ac77ef6e-e46f-41e0-91c6-f30a33f7000a" />
+
+*Control Inputs*
 <img width="700" height="525" alt="Fig3" src="https://github.com/user-attachments/assets/9437a3d2-c54b-48b5-a094-be5bcfb7cb60" />
+
+*2D Trajectory*
 <img width="700" height="525" alt="Fig4" src="https://github.com/user-attachments/assets/24901a2d-97e9-46a7-bc2c-bff445968cbf" />
 
 
