@@ -7,17 +7,23 @@ This repository provides a mathematical framework for analyzing the observabilit
 
 ### System and Measurement Model
 The ROV's dynamics are modeled as a linear time-invariant (LTI) system. Since only the spatial positions and yaw angle $(x, y, \psi)$ are measured, the measurement matrix $C \in \mathbb{R}^{3 \times 6}$ extracts only the first three states:
+
 $$\dot{X} = A X + B U$$
+
 $$Y = C X$$
 
 ### Luenberger Observer Dynamics
 To estimate the unmeasured velocities $(v_x, v_y, r)$, a state estimator (Observer) is designed. The estimated state $\hat{X}$ evolves according to the real system dynamics, corrected by an error term weighted by the observer gain matrix $K_o \in \mathbb{R}^{6 \times 3}$:
+
 $$\dot{\hat{X}} = A \hat{X} + B U + K_o (Y - \hat{Y})$$
+
 Where $\hat{Y} = C \hat{X}$ is the estimated measurement.
 
 ### Pole Placement (Gain Calculation)
 The observer gain matrix $K_o$ is determined analytically by forcing the error dynamics to match a desired second-order characteristic equation:
+
 $$s^2 + 2\xi\omega_n s + \omega_n^2$$
+
 For this implementation, the system is tuned for critical damping $(\xi = 1)$ and a natural frequency of $\omega_n = 1 \text{ rad/s}$ to ensure rapid and oscillation-free convergence of the estimation error.
 
 ## Simulation & Performance Metrics
